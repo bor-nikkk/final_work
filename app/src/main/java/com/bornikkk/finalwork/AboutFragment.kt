@@ -18,14 +18,14 @@ class AboutFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_about, container, false)
 
-        val aboutNameList:List<String> = listOf("Автор - https://ya.ru/", "Поддержка - https://ya.ru/", "Помощ - https://ya.ru/")
+        val aboutNameList:List<String> = listOf("bornikkk@mail.ru", "bornikkk@yandex.ru", "bornikkk@gmx.de")
 
         val aboutRecyclerView:RecyclerView =view.findViewById(R.id.about_recycler_view)
 
         aboutRecyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
 
 
-        aboutRecyclerView.adapter = AboutAdapter(aboutNameList)
+        aboutRecyclerView.adapter = AboutAdapter(aboutNameList, requireActivity())
         return view
     }
 

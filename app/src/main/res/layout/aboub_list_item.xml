@@ -8,7 +8,7 @@
 
         android:layout_margin="20dp"
         android:textSize="20dp"
-        android:text="123123123123123"
+        android:text=""
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
 
-        android:text="Перейти" />
+        android:text="Написать" />
 
 
 </LinearLayout>

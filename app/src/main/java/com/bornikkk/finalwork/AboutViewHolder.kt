@@ -17,7 +17,7 @@ import androidx.core.content.ContextCompat.startActivity
 
 
 
-class AboutViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+class AboutViewHolder(itemView: View, private val activity: Activity) : RecyclerView.ViewHolder(itemView) {
 
     fun bind(aboutName: String){
 
@@ -33,15 +33,15 @@ class AboutViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         aboutButton.setOnClickListener {
 
             //val link = Uri.parse(aboutName)
-            val link = Uri.parse("https://ya.ru/")
-            val intent = Intent(Intent.ACTION_VIEW, link)
-            Activity().startActivity(intent)
+            //val link = Uri.parse("https://ya.ru/")
+            //val intent = Intent(Intent.ACTION_VIEW, link)
+            //activity.startActivity(intent)
 
-            //val intent = Intent(Intent.ACTION_SEND)
-            //intent.type = "text/plain"
-            //intent.putExtra(Intent.EXTRA_SUBJECT, "Пиьстмо из приложения")
-            //intent.putExtra(Intent.EXTRA_EMAIL, aboutName)
-            //Activity().startActivity(Intent.createChooser(intent, "Sharing something."))
+            val intent = Intent(Intent.ACTION_SEND)
+            intent.type = "text/plain"
+            intent.putExtra(Intent.EXTRA_SUBJECT, "Письмо из приложения")
+            intent.putExtra(Intent.EXTRA_EMAIL, aboutName)
+            activity.startActivity(Intent.createChooser(intent, "Sharing something."))
 
         }
     }

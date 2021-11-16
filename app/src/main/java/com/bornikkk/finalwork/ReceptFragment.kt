@@ -151,9 +151,12 @@ class ReceptFragment : Fragment(){
 
         beerButton = view.findViewById(R.id.beerButton)
         receptTextView = view.findViewById(R.id.receptTextView)
+        receptTextView.text = receptBeerMap.get(1)
+
+        val listSize:Int = 3
 
         beerButton.setOnClickListener {
-            val randomBeer = (0..3).random()
+            val randomBeer = (1..listSize).random()
             receptTextView.text = receptBeerMap.get(randomBeer)
         }
 
